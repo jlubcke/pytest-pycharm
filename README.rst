@@ -11,3 +11,12 @@ Features
 --------
 
 * Uncaught exceptions in py.test test cases will trigger the PyCharm debugger
+
+
+Installation
+------------
+
+You can install the plugin by running
+
+    pip install pytest-pycharm
+
