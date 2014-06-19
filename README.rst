@@ -20,3 +20,7 @@ You can install the plugin by running
 
     pip install pytest-pycharm
 
+Alternately check out the source code and run
+
+    python setup.py install
+
