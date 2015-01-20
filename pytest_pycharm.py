@@ -24,7 +24,8 @@ def pytest_exception_interact(node, call, report):
         thread.additionalInfo.pydev_force_stop_at_exception = (frame, frames_by_id)
         thread.additionalInfo.message = "test fail"
         debugger = pydevd.debugger
-        debugger.force_post_mortem_stop += 1
+        if hasattr(debugger, "force_post_mortem_stop"):
+            debugger.force_post_mortem_stop += 1
 
         pydevd_tracing.SetTrace(None)
         debugger.handle_post_mortem_stop(thread.additionalInfo, thread)
