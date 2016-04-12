@@ -20,14 +20,10 @@ def pytest_exception_interact(node, call, report):
         thread = threading.current_thread()
         frames_by_id = dict([(id(frame), frame) for frame in frames])
         frame = frames[-1]
-        thread.additionalInfo.exception = (exctype, value, traceback)
-        thread.additionalInfo.pydev_force_stop_at_exception = (frame, frames_by_id)
-        thread.additionalInfo.message = "test fail"
+        exception = (exctype, value, traceback)
+        thread.additional_info.pydev_message = 'test fail'
         debugger = pydevd.debugger
-        if hasattr(debugger, "force_post_mortem_stop"):
-            debugger.force_post_mortem_stop += 1
-
-        pydevd_tracing.SetTrace(None)
-        debugger.handle_post_mortem_stop(thread.additionalInfo, thread)
+        pydevd_tracing.SetTrace(None)  # no tracing from here
+        debugger.handle_post_mortem_stop(thread, frame, frames_by_id, exception)
 
     return report
