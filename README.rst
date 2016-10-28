@@ -28,10 +28,10 @@ Alternately check out the source code and run
 Usage
 -----
 
-In pycharm choose ``run/debug/edit configurations``. Add a new configuration, 
-call it pycharm or anything you like. As a script, choose the pytest 
-executable (find its path using ``which pytest``). Add script parameters if 
-you use them.
+In pycharm choose ``run/edit configurations``. On the upper left corner, click
+on the + and choose ``python``. Call it pycharm or anything you like.
+As a script, choose the pytest executable (find its path using 
+``which pytest``). Add script parameters if you use them.
 
 Be sure to have the right python interpreter selected. Choose the working 
 directory. Apply changes and close the window.
