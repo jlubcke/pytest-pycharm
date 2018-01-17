@@ -2,6 +2,8 @@
 pytest-pycharm
 ===============================
 
+.. image:: https://badge.fury.io/py/pytest-pycharm.png
+    :target: http://badge.fury.io/py/pytest-pycharm
 
 Plugin for py.test to enter PyCharm debugger on uncaught exceptions
 
