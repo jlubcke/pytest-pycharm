@@ -22,7 +22,10 @@ def pytest_exception_interact(node, call, report):
         frame = frames[-1]
         exception = (exctype, value, traceback)
         thread.additional_info.pydev_message = 'test fail'
-        debugger = pydevd.debugger
+        try:
+            debugger = pydevd.debugger
+        except AttributeError:
+            debugger = pydevd.get_global_debugger()
         pydevd_tracing.SetTrace(None)  # no tracing from here
         debugger.handle_post_mortem_stop(thread, frame, frames_by_id, exception)
 
