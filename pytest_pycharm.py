@@ -27,6 +27,10 @@ def pytest_exception_interact(node, call, report):
         except AttributeError:
             debugger = pydevd.get_global_debugger()
         pydevd_tracing.SetTrace(None)  # no tracing from here
-        debugger.handle_post_mortem_stop(thread, frame, frames_by_id, exception)
+        try:
+            debugger.stop_on_unhandled_exception(thread, frame, frames_by_id, exception)
+        except AttributeError:
+            # fallback to pre PyCharm 2019.2 API
+            debugger.handle_post_mortem_stop(thread, frame, frames_by_id, exception)
 
     return report
