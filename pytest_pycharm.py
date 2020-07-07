@@ -21,7 +21,8 @@ def pytest_exception_interact(node, call, report):
         frames_by_id = dict([(id(frame), frame) for frame in frames])
         frame = frames[-1]
         exception = (exctype, value, traceback)
-        thread.additional_info.pydev_message = 'test fail'
+        if hasattr(thread, "additional_info"):
+            thread.additional_info.pydev_message = "test fail"
         try:
             debugger = pydevd.debugger
         except AttributeError:
