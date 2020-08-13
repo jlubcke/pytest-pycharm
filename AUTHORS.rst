@@ -11,3 +11,4 @@ Contributors
 ------------
 
 * Davide Olianas <ubuntupk@gmail.com>
+* Andrzej Klajnert <andrzejk@cadence.com>

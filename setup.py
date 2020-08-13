@@ -11,7 +11,7 @@ requirements = [
 
 setup(
     name='pytest-pycharm',
-    version='0.6.0',
+    version='0.7.0',
     description='Plugin for py.test to enter PyCharm debugger on uncaught exceptions',
     long_description=readme + '\n',
     author='Johan Lübcke',
@@ -39,8 +39,8 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Framework :: Pytest',
     ],
 )
